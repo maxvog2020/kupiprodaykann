@@ -14,7 +14,7 @@ import urllib
 TOKEN = config.bot_token.get_secret_value()
 CHAT_ID = config.chat_id.get_secret_value()
 MODER = config.moder.get_secret_value()
-WEB_PREFIX = "https://maxvog2020.github.io/telegram-bot-NNNedviga/web"
+WEB_PREFIX = "https://maxvog2020.github.io/telegram-bot-kupiprodaykann/web"
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=TOKEN)
