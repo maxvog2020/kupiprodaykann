@@ -26,8 +26,8 @@ async def sell_callback(message: Message, values):
 
     name = data['name'].strip()
     size = data['size'].strip()
-    description = data['description'].strip()
     address = data['address'].strip()
+    description = data['description'].strip()
     price = data['price'].strip()
     contacts = data['contacts'].strip()
     maps = data['maps']
@@ -59,8 +59,9 @@ async def give_callback(message: Message, values):
     data = values['json_data']
 
     name = data['name'].strip()
-    description = data['description'].strip()
+    size = data['size'].strip()
     address = data['address'].strip()
+    description = data['description'].strip()
     contacts = data['contacts'].strip()
     maps = data['maps']
     telegram = data['telegram']
@@ -71,6 +72,8 @@ async def give_callback(message: Message, values):
         address = get_address_ref(address)
     if address != "":
         text += f'<em>Адрес</em>\n🏢 {address}\n\n'
+    if size != "":
+        text += f'<em>Размер</em>\n📏 {size}\n\n'
     if description != "":
         text += f'<em>Описание</em>\nℹ {description}\n\n'
     if telegram or contacts != "":
@@ -87,16 +90,16 @@ async def buy_callback(message: Message, values):
     data = values['json_data']
 
     name = data['name'].strip()
+    size = data['size'].strip()
     description = data['description'].strip()
     price = data['price'].strip()
-    address = data['address'].strip()
     contacts = data['contacts'].strip()
     telegram = data['telegram']
 
     text = f'#куплю\n\n<em>Название</em>\n🆕<b>{name}</b> 🆕\n\n'
 
-    if address != "":
-        text += f'<em>Адрес</em>\n🏢 {address}\n\n'
+    if size != "":
+        text += f'<em>Размер</em>\n📏 {size}\n\n'
     if description != "":
         text += f'<em>Описание</em>\nℹ {description}\n\n'
     if price != "":

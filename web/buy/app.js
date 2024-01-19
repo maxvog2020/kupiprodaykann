@@ -8,8 +8,8 @@ let reader = new FileReader();
 const COLOR_GREEN = "text-green-500";
 const COLOR_RED = "text-red-500";
 const DEPENDENT_COUNTERS = [
-    ['name', 128, true],
-    ['address', 128, true],
+    ['name', 64, true],
+    ['size', 64, false],
     ['description', 512, false],
     ['price', 64, false],
     ['contacts', 128, false],
@@ -60,7 +60,6 @@ window.onload = () => {
             name: document.getElementById('name').value,
             description: document.getElementById('description').value,
             price: document.getElementById('price').value,
-            address: document.getElementById('address').value,
             contacts: document.getElementById('contacts').value,
             telegram: document.getElementById('telegram').checked,
             callback: "buy",
