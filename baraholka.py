@@ -25,6 +25,7 @@ async def sell_callback(message: Message, values):
     data = values['json_data']
 
     name = data['name'].strip()
+    size = data['size'].strip()
     description = data['description'].strip()
     address = data['address'].strip()
     price = data['price'].strip()
@@ -34,14 +35,16 @@ async def sell_callback(message: Message, values):
 
     text = f'#продам\n\n<em>Название</em>\n🆕 <b>{name}</b>\n\n'
 
-    if address != "" and maps:
-        address = get_address_ref(address)
-    if address != "":
-        text += f'<em>Адрес</em>\n🏢 {address}\n\n'
+    if size != "":
+        text += f'<em>Размер</em>\n📏 {size}\n\n'
     if description != "":
         text += f'<em>Описание</em>\nℹ {description}\n\n'
     if price != "":
         text += f'<em>Цена</em>\n💸 {price}\n\n'
+    if address != "" and maps:
+        address = get_address_ref(address)
+    if address != "":
+        text += f'<em>Адрес</em>\n🏢 {address}\n\n'
     if telegram or contacts != "":
         text += f'<em>Контакты</em>\n👤 {contacts}'
     if telegram and contacts != "":
