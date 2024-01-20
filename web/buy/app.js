@@ -58,6 +58,7 @@ window.onload = () => {
     
         let data = {
             name: document.getElementById('name').value,
+            size: document.getElementById('size').value,
             description: document.getElementById('description').value,
             price: document.getElementById('price').value,
             contacts: document.getElementById('contacts').value,
