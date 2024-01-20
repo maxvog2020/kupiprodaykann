@@ -10,7 +10,7 @@ const COLOR_RED = "text-red-500";
 const DEPENDENT_COUNTERS = [
     ['name', 64, true],
     ['size', 64, false],
-    ['address', 128, true],
+    ['address', 128, false],
     ['description', 512, false],
     ['contacts', 128, false],
 ];
