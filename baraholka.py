@@ -37,8 +37,8 @@ async def sell_callback(message: Message, values):
     text = f'#продам\n\n<em>Название</em>\n🆕 <b>{html.escape(name)}</b>\n\n'
 
     if address != "" and maps:
-        address = get_address_ref(address)
-    if address != "":
+        text += f'<em>Адрес</em>\n🏢 {get_address_ref(address)}\n\n'
+    if address != "" and not maps:
         text += f'<em>Адрес</em>\n🏢 {html.escape(address)}\n\n'
     if size != "":
         text += f'<em>Размер</em>\n📏 {html.escape(size)}\n\n'
@@ -70,8 +70,8 @@ async def give_callback(message: Message, values):
     text = f'#отдам\n\n<em>Название</em>\n🆕 <b>{html.escape(name)}</b>\n\n'
 
     if address != "" and maps:
-        address = get_address_ref(address)
-    if address != "":
+        text += f'<em>Адрес</em>\n🏢 {get_address_ref(address)}\n\n'
+    if address != "" and not maps:
         text += f'<em>Адрес</em>\n🏢 {html.escape(address)}\n\n'
     if size != "":
         text += f'<em>Размер</em>\n📏 {html.escape(size)}\n\n'
